@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0px;
+  display: flex;
+  align-items:center;
+  z-index: 100;
+  justify-content: space-between;
+}
+.navigation a{
+  position: relative;
+  /* border: 1px solid black; */
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 600;
+  justify-content: space-between;
+  margin-left: 20px;
+  text-decoration: none;
+  padding: 6px 15px;
+  transition: 0.2s;
+}
+.navigation a:hover,
+.navigation .home {
+  color: #333;
+}
+.navigation a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  /* border: 1px solid #000; */
+  border-radius: 30px;
+  transform: scale(0);
+  transition: 0.2s;
+  z-index: -1;
+}
+
+.navigation a:hover span,
+.navigation .home span {
+  transform: scale(1);
+  opacity: 1;
+}
+.logo {
+  font-size: 2em;
+  color: #fff;
+  text-shadow: 2px 4px 5px #000;
+  user-select: none;
+}
+.logo:hover {
+  animation: burning .5s infinite;
+}
+.parallax {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: url("./build/background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  align-items: center;
+}
+#text {
+  position: absolute;
+  font-size: 5em;
+  color: #6a9be0;
+  text-shadow: 2px 4px 5px #333;
+}
+
+.parallax img {
+  position: relative;
+  transform: scale(0.5);
+  top: 0;
+  pointer-events: none;
+  padding: 20%;
+  border-color: #000;
+  /* justify-content: space-between; */
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.parallax img#maharaja1 {
+  left: 0;
+}
+.parallax img#maharaja2 {
+  transform: scale(0.5) scaleX(-1);
+  right: 0;
+}
+.sec {
+  position: relative;
+  background: #020912;
+  padding: 30px 100px;
+}
+.sec h2 {
+  font-size: 3.3em;
+  color: #fff;
+}
+.sec p {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 300;
+}
+@keyframes burning {
+  0% {
+    text-shadow: 0 0 0 #fff, 0 0 10px rgb(174, 174, 73), 0 0 20px #f00, 0 0 30px #f00,
+      0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00;
+  }
+  50% {
+    text-shadow: 0 0 0 #fff, 0 0 10px rgb(174, 174, 73), 0 0 20px rgb(174, 174, 73), 0 0 30px rgb(174, 174, 73),
+      0 0 40px rgb(174, 174, 73), 0 0 50px rgb(174, 174, 73), 0 0 60px rgb(174, 174, 73);
+  }
+  100% {
+    text-shadow: 0 0 0 #fff, 0 0 10px rgb(174, 174, 73), 0 0 20px #f00, 0 0 30px #f00,
+      0 0 40px #f00, 0 0 50px #f00, 0 0 60px #f00;
+  }
+}
